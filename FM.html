@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>藤县中华蜂蜜 - 自然馈赠的甜蜜</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1587049352851-8d4e89133924?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .honey-comb {
+            background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 24h12v12H0v-12zm28 12h12v12H28v-12zm14-24h12v12H42V12zm14 0h12v12H56V12zm0 24h12v12H56v-12zM42 0h12v12H42V0zm0 24h12v12H42v-12zm14-24h12v12H56V0zM0 12h12v12H0V12zm0 24h12v12H0v-12z' fill='%23f59e0b' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .honey-drip {
+            position: relative;
+        }
+        
+        .honey-drip::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 40px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23d97706' d='M12 24c-2.21 0-4-2.24-4-5s4-8 4-8 4 4.24 4 7-1.79 5-4 5z'/%3E%3C/svg%3E") no-repeat;
+            background-size: contain;
+        }
+        
+        .bee-animation {
+            animation: fly 15s linear infinite;
+        }
+        
+        @keyframes fly {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(200px, 50px) rotate(90deg);
+            }
+            50% {
+                transform: translate(400px, -20px) rotate(180deg);
+            }
+            75% {
+                transform: translate(200px, 30px) rotate(270deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-amber-50 text-amber-900">
+    <!-- Navigation -->
+    <nav class="bg-amber-800 text-amber-50 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <i class="fas fa-honey-pot text-2xl text-amber-300"></i>
+                <span class="text-xl font-bold">藤县中华蜂蜜</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-amber-200 transition">首页</a>
+                <a href="#about" class="hover:text-amber-200 transition">关于我们</a>
+                <a href="#products" class="hover:text-amber-200 transition">产品系列</a>
+                <a href="#benefits" class="hover:text-amber-200 transition">蜂蜜功效</a>
+                <a href="#contact" class="hover:text-amber-200 transition">联系我们</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-btn">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-amber-700 px-6 py-3" id="mobile-menu">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="hover:text-amber-200 transition">首页</a>
+                <a href="#about" class="hover:text-amber-200 transition">关于我们</a>
+                <a href="#products" class="hover:text-amber-200 transition">产品系列</a>
+                <a href="#benefits" class="hover:text-amber-200 transition">蜂蜜功效</a>
+                <a href="#contact" class="hover:text-amber-200 transition">联系我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero min-h-screen flex items-center justify-center text-center text-white">
+        <div class="container mx-auto px-6 relative">
+            <div class="bee-animation absolute top-10 left-10">
+                <i class="fas fa-bug text-3xl text-yellow-400"></i>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">藤县中华蜂蜜</h1>
+            <p class="text-xl md:text-2xl mb-8">来自广西壮乡的自然馈赠，传承千年的养蜂技艺</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#products" class="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full font-bold transition">查看产品</a>
+                <a href="#about" class="bg-white hover:bg-gray-100 text-amber-800 px-8 py-3 rounded-full font-bold transition">了解更多</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 honey-comb">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">关于藤县中华蜂蜜</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1551218374-a3779bd5b0a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="藤县养蜂场" 
+                         class="rounded-lg shadow-xl w-full h-auto object-cover">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4">千年养蜂传统，自然纯净之选</h3>
+                    <p class="mb-4 text-lg">广西藤县地处北纬23°，气候温暖湿润，植被丰富多样，是中华蜜蜂的理想栖息地。我们的养蜂历史可追溯至唐代，世代传承的养蜂技艺与得天独厚的自然环境，造就了藤县中华蜂蜜的卓越品质。</p>
+                    <p class="mb-6 text-lg">我们坚持古法养蜂，拒绝人工干预，让蜜蜂在自然环境中自由采蜜，确保每一滴蜂蜜都饱含大自然的精华。</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-leaf text-amber-600 text-2xl mr-3"></i>
+                            <span>100%纯天然</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-history text-amber-600 text-2xl mr-3"></i>
+                            <span>传统工艺</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-seedling text-amber-600 text-2xl mr-3"></i>
+                            <span>无添加</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-award text-amber-600 text-2xl mr-3"></i>
+                            <span>品质保证</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-amber-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">我们的蜂蜜产品</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto"></div>
+                <p class="mt-4 max-w-2xl mx-auto">精选藤县优质蜜源，为您带来不同季节、不同花种的纯正蜂蜜</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1587049353472-63b20ade0b33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" 
+                             alt="荔枝蜜" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">荔枝蜜</h3>
+                            <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">春季限定</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">采自藤县优质荔枝花，色泽金黄透亮，口感清甜细腻，带有浓郁的荔枝花香。</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-amber-600">¥98</span>
+                            <button class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551218374-a3779bd5b0a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="百花蜜" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">百花蜜</h3>
+                            <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">全年供应</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">采集多种野花精华，营养丰富全面，口感醇厚回甘，是家庭日常保健的理想选择。</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-amber-600">¥88</span>
+                            <button class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="龙眼蜜" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">龙眼蜜</h3>
+                            <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">夏季限定</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">源自藤县百年龙眼树花蜜，色泽深琥珀色，味道浓郁香甜，具有独特的龙眼果香。</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-amber-600">¥108</span>
+                            <button class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-8 py-3 rounded-full font-bold transition">浏览全部产品</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">中华蜂蜜的功效</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto"></div>
+                <p class="mt-4 max-w-2xl mx-auto">天然蜂蜜不仅是美味的甜味剂，更是健康的守护者</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md text-center hover:shadow-xl transition">
+                    <div class="h-20 w-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6 honey-drip">
+                        <i class="fas fa-heart text-amber-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">增强免疫力</h3>
+                    <p class="text-gray-600">富含多种酶类、维生素和矿物质，能有效增强人体免疫力，提高抗病能力。</p>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md text-center hover:shadow-xl transition">
+                    <div class="h-20 w-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6 honey-drip">
+                        <i class="fas fa-lungs text-amber-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">润肺止咳</h3>
+                    <p class="text-gray-600">具有润肺止咳功效，对缓解咽喉不适、干咳等症状有明显效果。</p>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md text-center hover:shadow-xl transition">
+                    <div class="h-20 w-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6 honey-drip">
+                        <i class="fas fa-brain text-amber-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">改善睡眠</h3>
+                    <p class="text-gray-600">睡前饮用蜂蜜水有助于放松神经，改善睡眠质量，缓解失眠症状。</p>
+                </div>
+                
+                <!-- Benefit 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-md text-center hover:shadow-xl transition">
+                    <div class="h-20 w-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6 honey-drip">
+                        <i class="fas fa-bacterium text-amber-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">抗菌消炎</h3>
+                    <p class="text-gray-600">天然抗菌成分能有效抑制多种细菌生长，对伤口愈合有促进作用。</p>
+                </div>
+                
+                <!-- Benefit 5 -->
+                <div class="bg-white p-8 rounded-xl shadow-md text-center hover:shadow-xl transition">
+                    <div class="h-20 w-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6 honey-drip">
+                        <i class="fas fa-weight text-amber-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">美容养颜</h3>
+                    <p class="text-gray-600">丰富的抗氧化物质能延缓衰老，内服外用均可改善肤质，使肌肤光滑细腻。</p>
+                </div>
+                
+                <!-- Benefit 6 -->
+                <div class="bg-white p-8 rounded-xl shadow-md text-center hover:shadow-xl transition">
+                    <div class="h-20 w-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6 honey-drip">
+                        <i class="fas fa-utensils text-amber-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">调理肠胃</h3>
+                    <p class="text-gray-600">调节胃酸分泌，促进消化吸收，对胃炎、胃溃疡等有一定的辅助治疗作用。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-amber-800 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">顾客评价</h2>
+                <div class="w-24 h-1 bg-amber-300 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-amber-700 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="flex -space-x-2">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" 
+                                 alt="顾客头像" 
+                                 class="w-12 h-12 rounded-full border-2 border-amber-300">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">李女士</h4>
+                            <div class="flex text-amber-300">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"藤县的荔枝蜜口感纯正，甜而不腻，每天早上空腹喝一杯蜂蜜水，肠胃感觉特别舒服，已经回购第三次了！"</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-amber-700 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="flex -space-x-2">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" 
+                                 alt="顾客头像" 
+                                 class="w-12 h-12 rounded-full border-2 border-amber-300">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">张先生</h4>
+                            <div class="flex text-amber-300">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"作为老藤县人，我可以负责任地说，这家的蜂蜜是真正的土蜂蜜，味道和小时候奶奶养蜂采的蜜一模一样，品质有保障。"</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-amber-700 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="flex -space-x-2">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" 
+                                 alt="顾客头像" 
+                                 class="w-12 h-12 rounded-full border-2 border-amber-300">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">王女士</h4>
+                            <div class="flex text-amber-300">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"买来送给长辈的，包装精美，蜂蜜品质也很好。老人家说喝了睡眠质量提高了，准备再买几瓶送给亲戚朋友。"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">联系我们</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto"></div>
+                <p class="mt-4 max-w-2xl mx-auto">如有任何疑问或需要定制服务，欢迎随时联系我们</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block mb-2 font-medium">您的姓名</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block mb-2 font-medium">电子邮箱</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block mb-2 font-medium">联系电话</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block mb-2 font-medium">留言内容</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-bold transition">发送留言</button>
+                    </form>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-xl shadow-lg h-full">
+                        <h3 class="text-2xl font-bold mb-6">联系方式</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-amber-600 text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold mb-1">地址</h4>
+                                    <p>广西壮族自治区梧州市藤县太平镇中华蜂蜜养殖基地</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt text-amber-600 text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold mb-1">电话</h4>
+                                    <p>0774-XXXXXXX</p>
+                                    <p>138XXXXXXXX</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-amber-600 text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold mb-1">邮箱</h4>
+                                    <p>info@tengxianhoney.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-amber-600 text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold mb-1">营业时间</h4>
+                                    <p>周一至周六: 8:30 - 18:00</p>
+                                    <p>周日: 休息</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold mb-4">关注我们</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 hover:bg-amber-600 hover:text-white transition">
+                                    <i class="fab fa-weixin"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 hover:bg-amber-600 hover:text-white transition">
+                                    <i class="fab fa-weibo"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 hover:bg-amber-600 hover:text-white transition">
+                                    <i class="fab fa-douyin"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 hover:bg-amber-600 hover:text-white transition">
+                                    <i class="fab fa-tiktok"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="h-96 w-full">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.611178115161!2d110.8143153153403!3d22.3709859853077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36f8a3a0c1b7d7b5%3A0x4a3a8a3a8a3a8a3!2z5rGf5a6u5YyX5rGf5a6u5biC!5e0!3m2!1szh-CN!2scn!4v1621234567890!5m2!1szh-CN!2scn" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-amber-900 text-amber-100 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-honey-pot text-amber-300 mr-2"></i>
+                        藤县中华蜂蜜
+                    </h3>
+                    <p class="mb-4">传承千年养蜂技艺，奉献自然纯净蜂蜜。</p>
+                    <p>© 2023 藤县中华蜂蜜. 版权所有.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-amber-300 transition">首页</a></li>
+                        <li><a href="#about" class="hover:text-amber-300 transition">关于我们</a></li>
+                        <li><a href="#products" class="hover:text-amber-300 transition">产品系列</a></li>
+                        <li><a href="#benefits" class="hover:text-amber-300 transition">蜂蜜功效</a></li>
+                        <li><a href="#contact" class="hover:text-amber-300 transition">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">产品系列</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-amber-300 transition">荔枝蜜</a></li>
+                        <li><a href="#" class="hover:text-amber-300 transition">龙眼蜜</a></li>
+                        <li><a href="#" class="hover:text-amber-300 transition">百花蜜</a></li>
+                        <li><a href="#" class="hover:text-amber-300 transition">冬蜜</a></li>
+                        <li><a href="#" class="hover:text-amber-300 transition">蜂王浆</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">订阅电子报</h3>
+                    <p class="mb-4">订阅获取最新产品信息和优惠活动</p>
+                    <form class="flex">
+                        <input type="email" placeholder="您的邮箱" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
+                        <button type="submit" class="bg-amber-600 hover:bg-amber-700 px-4 py-2 rounded-r-lg transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-amber-800 mt-12 pt-8 text-center">
+                <p>网站设计: 藤县中华蜂蜜品牌中心 | 桂ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-amber-600 text-white w-12 h-12 rounded-full shadow-lg hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Floating action button -->
+    <div class="fixed bottom-8 left-8 space-y-3 hidden md:block">
+        <a href="#" class="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition floating">
+            <i class="fab fa-weixin text-2xl"></i>
+        </a>
+        <a href="#" class="w-14 h-14 bg-red-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-red-600 transition floating" style="animation-delay: 0.2s;">
+            <i class="fas fa-phone-alt text-xl"></i>
+        </a>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Back to top button
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Product hover effect
+        const products = document.querySelectorAll('#products .hover\\:scale-105');
+        products.forEach(product => {
+            product.addEventListener('mouseenter', () => {
+                product.style.transform = 'scale(1.05)';
+            });
+            
+            product.addEventListener('mouseleave', () => {
+                product.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
